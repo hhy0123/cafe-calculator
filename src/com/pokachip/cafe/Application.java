@@ -12,12 +12,24 @@ public class Application {
         do {
             System.out.println("===== [팀 이름] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
+            System.out.println("2. 남은 칼로리 계산");
             System.out.println("0. 종료");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
                 // (2) 각자 자기 case 블록 추가
+                case 2: {
+                    System.out.print("목표 칼로리 : ");
+                    int target = sc.nextInt();
+                    System.out.print("먹은 칼로리 : ");
+                    int eaten = sc.nextInt();
+
+                    MinusCalculator minus = new MinusCalculator();
+                    String message = minus.judge(target, eaten);
+                    System.out.println(message);
+                    break;
+                }
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
