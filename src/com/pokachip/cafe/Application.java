@@ -13,7 +13,7 @@ public class Application {
             System.out.println("===== [포카칩] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
             System.out.println("0. 종료");
-            System.out.println("3. 칼로리 계산");
+            System.out.println("3. 개수 별 칼로리 계산");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
