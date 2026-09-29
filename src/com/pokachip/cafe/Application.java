@@ -10,17 +10,31 @@ public class Application {
         int menu;
 
         do {
-            System.out.println("===== [팀 이름] 식단 계산기 =====");
+            System.out.println("===== [포카칩] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
             System.out.println("0. 종료");
+            System.out.println("3. 칼로리 계산");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
                 // (2) 각자 자기 case 블록 추가
+                case 3: {
+                    System.out.print("1개 칼로리 : ");
+                    int calories = sc.nextInt();
+
+                    System.out.print("몇 개까지 : ");
+                    int maxCounts = sc.nextInt();
+
+                    MultiplyCalculator calculator = new MultiplyCalculator();
+                    calculator.printCalorieTable(calories, maxCounts);
+                    break;
+                }
+
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
+
                 default:
                     System.out.println("없는 메뉴입니다. 다시 선택하세요.");
             }
