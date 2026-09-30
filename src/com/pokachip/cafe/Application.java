@@ -13,6 +13,7 @@ public class Application {
             System.out.println("===== [포카칩] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
             System.out.println("1. 하루 칼로리 합계");
+            System.out.println("2. 남은 칼로리 계산");
             System.out.println("3. 개수 별 칼로리 계산");
             System.out.println("4. 가격 더치페이");
             System.out.println("0. 종료");
@@ -34,6 +35,17 @@ public class Application {
                     System.out.println("총 칼로리 : " + total + " kcal");
                     break;
                 }
+                case 2: {
+                    System.out.print("목표 칼로리 : ");
+                    int target = sc.nextInt();
+                    System.out.print("먹은 칼로리 : ");
+                    int eaten = sc.nextInt();
+
+                    MinusCalculator minus = new MinusCalculator();
+                    String message = minus.judge(target, eaten);
+                    System.out.println(message);
+                    break;
+                }
                 case 3: {
                     System.out.print("1개 칼로리 : ");
                     int calories = sc.nextInt();
@@ -45,7 +57,6 @@ public class Application {
                     calculator.CalorieTable(calories, maxCounts);
                     break;
                 }
-
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
