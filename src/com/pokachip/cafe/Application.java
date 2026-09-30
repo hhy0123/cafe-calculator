@@ -10,18 +10,37 @@ public class Application {
         int menu;
 
         do {
-            System.out.println("===== [팀 이름] 식단 계산기 =====");
+            System.out.println("===== [포카칩] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
             System.out.println("0. 종료");
+<<<<<<< HEAD
+            System.out.println("3. 개수 별 칼로리 계산");
+=======
             System.out.println("4. 가격 더치페이");
+>>>>>>> 4e7e0045861007d259eba93d6e9d4518268ecdb6
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
                 // (2) 각자 자기 case 블록 추가
+                case 3: {
+                    System.out.print("1개 칼로리 : ");
+                    int calories = sc.nextInt();
+
+                    System.out.print("몇 개까지 : ");
+                    int maxCounts = sc.nextInt();
+
+                    MultiplyCalculator calculator = new MultiplyCalculator();
+                    calculator.CalorieTable(calories, maxCounts);
+                    break;
+                }
+
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
+<<<<<<< HEAD
+
+=======
                 case 4:
 
                     // 총 주문 금액 입력
@@ -45,6 +64,7 @@ public class Application {
                             System.out.println("1인당 " + div_cost + "원");
                     }
                     break;
+>>>>>>> 4e7e0045861007d259eba93d6e9d4518268ecdb6
                 default:
                     System.out.println("없는 메뉴입니다. 다시 선택하세요.");
             }
