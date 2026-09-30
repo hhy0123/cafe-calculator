@@ -13,6 +13,7 @@ public class Application {
             System.out.println("===== [팀 이름] 식단 계산기 =====");
             // (1) 각자 자기 메뉴 한 줄 추가
             System.out.println("0. 종료");
+            System.out.println("4. 가격 더치페이");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
@@ -20,6 +21,29 @@ public class Application {
                 // (2) 각자 자기 case 블록 추가
                 case 0:
                     System.out.println("계산기를 종료합니다.");
+                    break;
+                case 4:
+
+                    // 총 주문 금액 입력
+                    System.out.print("주문 금액 총액을 입력하세요: ");
+                    int total = sc.nextInt();
+
+                    // 인원 수 입력
+                    System.out.print("인원 수를 입력하세요: ");
+                    int humans = sc.nextInt();
+
+                    switch (humans) {
+                        case 0:
+                            System.out.println("인원은 1명 이상이어야 합니다.");
+                            break;
+
+                        default:
+
+                            DivideCalculator div_calc = new DivideCalculator();
+                            double div_cost = div_calc.individual_cost(total, humans);
+
+                            System.out.println("1인당 " + div_cost + "원");
+                    }
                     break;
                 default:
                     System.out.println("없는 메뉴입니다. 다시 선택하세요.");
