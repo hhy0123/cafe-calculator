@@ -27,7 +27,7 @@ public class Application {
                     int maxCounts = sc.nextInt();
 
                     MultiplyCalculator calculator = new MultiplyCalculator();
-                    calculator.printCalorieTable(calories, maxCounts);
+                    calculator.CalorieTable(calories, maxCounts);
                     break;
                 }
 
